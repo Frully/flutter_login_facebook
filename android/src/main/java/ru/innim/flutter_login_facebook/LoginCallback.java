@@ -44,7 +44,7 @@ public class LoginCallback implements FacebookCallback<LoginResult> {
 
     @Override
     public void onError(FacebookException error) {
-        callResult(Results.loginError());
+        callResult(Results.loginError(error));
     }
 
     private void loginSuccess(final LoginResult loginResult) {
@@ -58,9 +58,9 @@ public class LoginCallback implements FacebookCallback<LoginResult> {
         }
     }
 
-    private void callError(int code, String message) {
+    private void callError(String code, String message) {
         if (_pendingResult != null) {
-            _pendingResult.error(Integer.toString(code), message, null);
+            _pendingResult.error(code, message, null);
             _pendingResult = null;
         }
     }

@@ -1,6 +1,8 @@
 package ru.innim.flutter_login_facebook;
 
 public class ErrorCode {
-    public static final int UNKNOWN = 0;
-    public static final int INTERRUPTED = 1;
+    public static final String UNKNOWN = "UNKNOWN";
+    public static final String INTERRUPTED = "INTERRUPTED";
+    public static final String FAILED = "FAILED";
+    public static final String INVALID_ARGS = "INVALID_ARGS";
 }
